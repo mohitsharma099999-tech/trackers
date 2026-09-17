@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
-"""
-Terminal-based E-commerce Price Tracker
-Usage:
-    python price_tracker.py add <url> [target_price]
-    python price_tracker.py remove <index>
-    python price_tracker.py list
-    python price_tracker.py check
-    python price_tracker.py watch [interval_minutes]
-"""
+
 
 import sys
 import json
@@ -23,7 +15,7 @@ init(autoreset=True)
 DATA_FILE = os.path.join(os.path.dirname(__file__), 'tracked_items.json')
 
 
-# ---------- Data persistence ----------
+
 
 def load_items():
     if not os.path.exists(DATA_FILE):
@@ -37,7 +29,7 @@ def save_items(items):
         json.dump(items, f, indent=2)
 
 
-# ---------- Core functionality ----------
+
 
 def add_item(url, target_price=None):
     items = load_items()
